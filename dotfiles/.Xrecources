@@ -1,0 +1,26 @@
+XTerm.termName: xterm-256color
+XTerm.vt100.locale: true
+XTerm.vt100.saveLines: 4096
+xterm*VT100.Translations: #override \
+	Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \n\
+	Ctrl Shift <Key>C:    copy-selection(CLIPBOARD)
+XTerm.vt100.faceName: UbuntuMono Nerd Font Mono:size=16:antialias=true
+XTerm.vt100.font: 7x13
+xterm*background: rgb:33/33/33
+xterm*foreground: rgb:db/db/db
+xterm*color0:     rgb:33/33/33
+xterm*color8:     rgb:33/33/33
+xterm*color1:     rgb:ff/a0/a0
+xterm*color9:     rgb:9a/c8/d6
+xterm*color2:     rgb:b6/f0/b6
+xterm*color10:    rgb:f0/ad/e5
+xterm*color3:     rgb:f0/e6/8c
+xterm*color11:    rgb:f0/e6/8c
+xterm*color4:     rgb:87/ce/eb
+xterm*color12:    rgb:87/ce/eb
+xterm*color5:     rgb:ff/a0/a0
+xterm*color13:    rgb:ff/a0/a0
+xterm*color6:     rgb:87/ce/eb
+xterm*color14:    rgb:87/ce/eb
+xterm*color7:     rgb:ff/ff/ff
+xterm*color15:    rgb:ff/ff/ff

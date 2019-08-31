@@ -1,0 +1,22 @@
+Config { bgColor = "#3b3a38"
+       , fgColor = "#f3f3f3"
+       , position = Top
+       , commands = [ Run Cpu
+       ["-L","20","-H","50","--normal","#debc8a","--high","#de8aae", "--low", "#94d6b5"] 10
+                    , Run Memory ["-t", "Mem: <usedratio>%", "-H", "35", "--normal", "#debc8a", "--high", "#de8aae", "--low", "#94d6b5"] 10
+                    , Run Date "%a %b %_d %I:%M:%S" "date" 10
+                    , Run Battery ["-t", "Battery: <left>% <acstatus>", "-L","49","-H","75","--high","#94d6b5","--normal","#debc8a","--low","#de8aae"] 20
+		    , Run Wireless "wlp61s0" ["-t", "Wifi: <essid> [<qualitybar>]","-L","49","-H","75","--high","#94d6b5","--normal","#debc8a","--low","#de8aae"] 40
+		    , Run DynNetwork ["-t", "<rx>kB|<tx>kB"] 40
+		    , Run Com "/home/georgec/scripts/xmobar/wireless" [] "wifi" 10
+		    , Run Com "/home/georgec/scripts/xmobar/volume" [] "vol" 5
+		    --, Run Alsa "pulsesrc" "alsa_output.pci-0000_00_1f.3.analog-stereo" []
+		    , Run Volume "pulse" "Master" ["-t", "<volume>% <status>", "--", "-on", "x"] 10
+		    , Run Com "/home/georgec/scripts/xmobar/brightness" [] "bright" 5
+		    , Run Com "/bin/bash" ["-c", "nvidia-settings -t -q '[gpu:0]/GPUUtilization' | cut -d ',' -f1 | cut -d '=' -f2","-L","1","-H","6","--high","#94d6b5","--normal","#debc8a","--low","#de8aae"] "gpu" 10
+                    , Run StdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }{ %pulse:Master% |  %gpu% |  %bright% | %wlp61s0wi% %dynnetwork% | %vol% | %cpu% | %memory% | %battery% | <fc=#9ac8d6>%date%</fc>"
+}
